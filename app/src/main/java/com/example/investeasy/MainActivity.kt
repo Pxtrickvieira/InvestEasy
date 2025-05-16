@@ -44,9 +44,7 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-
             val i = jurosPercent / 100.0
-
 
             val valorFinal = if (i != 0.0) {
                 aporte * ((1 + i).pow(meses.toDouble()) - 1) / i
@@ -63,7 +61,6 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        // Configura o clique do botão "Limpar" para resetar os campos e resultados
         binding.btnLimpar.setOnClickListener {
             binding.tieInsAporte.setText("")
             binding.tieInsMeses.setText("")
