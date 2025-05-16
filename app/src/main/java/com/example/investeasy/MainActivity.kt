@@ -1,6 +1,9 @@
 package com.example.investeasy
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.view.inputmethod.InputMethodManager
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -20,6 +23,11 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.root.setOnTouchListener { _, _ ->
+            esconderTecladoETirarFoco()
+            false
+        }
 
 
         binding.btnCalcular.setOnClickListener {
@@ -67,6 +75,14 @@ class MainActivity : AppCompatActivity() {
             binding.tieInsJuros.setText("")
             binding.txtValorLabel.text = "0.0"
             binding.txtValorVrLabel.text = "0.0"
+        }
+    }
+    private fun esconderTecladoETirarFoco() {
+        val gestorTeclado = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+
+        currentFocus?.let { viewFocada ->
+            gestorTeclado.hideSoftInputFromWindow(viewFocada.windowToken, 0)
+            viewFocada.clearFocus()
         }
     }
 }
