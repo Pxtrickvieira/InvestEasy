@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="#BE101010"
     android:scrollbars="none"
-    tools:context=".MainActivity">
+    tools:context=".ResultadoActivity">
 
     <LinearLayout
         android:id="@+id/main"
@@ -18,7 +18,7 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/txt_title"
+            android:id="@+id/txt_title_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -29,30 +29,30 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/text_Sub_title"
-            android:layout_width="match_parent"
+            android:id="@+id/text_Sub_title_result"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:maxLines="1"
-            android:text="Valor recebido ao final do investimento:"
-            android:gravity="center"
+            android:text="O valor recebido ao final do investimento será de:"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/txt_valor_label"
+            android:id="@+id/txt_valor_label_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center"
             android:layout_marginTop="16dp"
+            android:gravity="center"
             android:text="0.0"
             android:textColor="@color/white"
             android:textSize="48sp" />
 
         <TextView
-            android:id="@+id/txt_vr_label"
+            android:id="@+id/txt_vr_label_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -62,18 +62,18 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/txt_valor_vr_label"
+            android:id="@+id/txt_valor_vr_label_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="4dp"
             android:text="0.0"
             android:textColor="#61FF07"
-            android:textSize="32sp" />
+            android:textSize="28sp" />
 
 
         <TextView
-            android:id="@+id/text_apt_mes"
+            android:id="@+id/text_apt_mes_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -82,14 +82,14 @@
             android:textSize="18sp" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_ins_aporte"
+            android:id="@+id/til_ins_aporte_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tie_ins_aporte"
+                android:id="@+id/tie_ins_aporte_result"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Inserir valor $"
@@ -102,7 +102,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/txt_qtd_mes"
+            android:id="@+id/txt_qtd_mes_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -111,14 +111,14 @@
             android:textSize="18sp" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_ins_meses"
+            android:id="@+id/til_ins_meses_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tie_ins_meses"
+                android:id="@+id/tie_ins_meses_result"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Qtd de Meses"
@@ -130,9 +130,8 @@
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
         <TextView
-            android:id="@+id/txt_juros"
+            android:id="@+id/txt_juros_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -141,14 +140,14 @@
             android:textSize="18sp" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_ins_juros"
+            android:id="@+id/til_ins_juros_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tie_ins_juros"
+                android:id="@+id/tie_ins_juros_result"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Juros %"
@@ -169,7 +168,7 @@
             android:weightSum="2">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_limpar"
+                android:id="@+id/btn_limpar_result"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -184,12 +183,12 @@
                 android:layout_height="match_parent" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_calcular"
+                android:id="@+id/btn_calcular_result"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/button_borda"
-                android:text="Calcular"
+                android:text="Voltar"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:textSize="16sp" />
